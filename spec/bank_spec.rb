@@ -14,8 +14,8 @@ describe Bank do
       instance = Bank.new(client)
       instance.operations.should_not be_nil
       instance.print.should_not be_nil
-      instance.operations.should === instance.operations
-      instance.print.should === instance.print
+      instance.operations.should == instance.operations
+      instance.print.should == instance.print
     end
   end
 end

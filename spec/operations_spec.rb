@@ -20,23 +20,22 @@ describe Operations do
     it '#deposit will return correct result' do
       client = "John Doe" 
       instance = Bank.new(client)
-      expect(instance.operations.deposit("14/01/10",100)).to eq([["credit","14/01/10",100,100]])
+      expect(instance.operations.deposit("14/01/10", 100)).to eq([["credit", "14/01/10", 100, 100]])
     end
     it '#deposit + withdrawal will return correct result' do
       client = "John Doe"
       instance = Bank.new(client)
-      instance.operations.deposit("14/01/10",300)
-      expect(instance.operations.withdrawal("14/02/10",100)).to eq([["credit", "14/01/10", 300, 300], ["debit", "14/02/10", 100, 200]])
+      instance.operations.deposit("14/01/10", 300)
+      expect(instance.operations.withdrawal("14/02/10", 100)).to eq([["credit", "14/01/10", 300, 300], ["debit", "14/02/10", 100, 200]])
     end 
 
     it '#deposit + withdrawal will return correct balance' do
       client = "John Doe"
       instance = Bank.new(client)
-      instance.operations.deposit("14/01/10",300)
-      instance.operations.withdrawal("14/02/10",100)
+      instance.operations.deposit("14/01/10", 300)
+      instance.operations.withdrawal("14/02/10", 100)
       expect(instance.operations.balance).to eq(200)
     end 
   end
-
 
 end
