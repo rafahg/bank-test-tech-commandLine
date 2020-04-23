@@ -83,7 +83,7 @@ This program is intended to be displayed in the command line, and it is necessar
    ```
   - once in the console to use the methods and obtain a result , type the following.
   ```
-  $ require '/lib/bank.rb'
+  $ require './lib/bank.rb'
   ```
   You should obtain a true result.
 
@@ -92,14 +92,15 @@ This program is intended to be displayed in the command line, and it is necessar
   ```
   $ instance = Bank.new("John Doe") // it will create an instance of the Bank class.
 
-  $ instance.print.account.deposit("14/01/10",100) // will create a deposit of 100$ the 14/01/10. 
+  $ instance.print.account.deposit(100) // will create a deposit of 100$, at the current date the deposit is made (real time)
 
-  $ instance.print.account.withdrawal("14/02/10",50) // will  create a 50$ withdrawal register the 14/02/10.
+  $ instance.print.account.withdrawal(50) // will  create a 50$ withdrawal registered at the date and time the withdrawal is made.
 
   $ instance.print.print_statement //will print all the registers in the account.
 
   ```
-  
+   if a withdrawal is made without funds in the account, an error message will arise.
+
 4. SETUP PROJECT.
 
   To see  the setup proccess i have made for this project , check the SETUP_GUIDE file included.
