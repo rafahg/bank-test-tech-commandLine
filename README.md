@@ -101,6 +101,21 @@ This program is intended to be displayed in the command line, and it is necessar
   ```
    if a withdrawal is made without funds in the account, an error message will arise.
 
+   ``` 
+   Runtime Error(Not enough funds in the account)
+
+   ``` 
+   
+  3.1 Running Rspec and coverage.
+
+  To run rspec, just type in the terminal,
+
+     $ rspec 
+
+  That will display the result of the tests and de % of coverage.
+
+
+
 4. SETUP PROJECT.
 
   To see  the setup proccess i have made for this project , check the SETUP_GUIDE file included.

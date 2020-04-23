@@ -11,17 +11,18 @@ class Operations
   end
   
   def deposit(amount)
-    @account[client_name].push(["credit", self.date, amount, @balance += amount]).reverse
+    @account[client_name].push(["credit", date, amount, @balance += amount]).reverse
   end
     
   def withdrawal(amount)
-    raise 'Not enough funds in the account' if self.balance?(amount)
-    @account[client_name].push(["debit", self.date, amount, @balance -= amount])
+    raise 'Not enough funds in the account' if balance?(amount)
+
+    @account[client_name].push(["debit", date, amount, @balance -= amount])
   
   end
 
   def balance?(amount)
-    (@balance - amount < 0)
+    (@balance - amount).negative?
   end 
 
   def date 
@@ -29,5 +30,3 @@ class Operations
     d.strftime("%d/%m/%Y")
   end
 end
-
- 

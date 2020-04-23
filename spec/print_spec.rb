@@ -23,14 +23,14 @@ describe Print do
       client = "John Doe"
       instance = Bank.new(client)
       instance.print.account.deposit(100)
-      expect { instance.print.print_statement }.to output("   Date   || Credit || Debit || Balance\n---------------------------------------\n22/04/2020   |  100            |  100\n").to_stdout
+      expect { instance.print.print_statement }.to output("   Date   || Credit || Debit || Balance\n---------------------------------------\n#{instance.operations.date}   |  100            |  100\n").to_stdout
     end
     it '#print_statement will print one withdrawal line in the correct format' do
       client = "John Doe"
       instance = Bank.new(client)
       instance.print.account.deposit(200)
       instance.print.account.withdrawal(100)
-      expect { instance.print.print_statement }.to output("   Date   || Credit || Debit || Balance\n---------------------------------------\n22/04/2020   |  200            |  200\n22/04/2020   |           100   |  100\n").to_stdout
+      expect { instance.print.print_statement }.to output("   Date   || Credit || Debit || Balance\n---------------------------------------\n#{instance.operations.date}   |  200            |  200\n#{instance.operations.date}   |           100   |  100\n").to_stdout
     end
   end
 end
